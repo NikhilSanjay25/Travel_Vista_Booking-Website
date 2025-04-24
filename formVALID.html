@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style_tn.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <title>Booking</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .form-container img {
+      width: 200px; /* Adjust the width as needed */
+      margin-left: 20px; /* Adjust the margin as needed */
+    }
+  </style>
+  <script>
+    function Verif() {
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("Age").value;
+    var familyMembers = document.getElementById("familyMembers").value;
+    var selectedOption = document.getElementById("inputSelect").value;
+
+    if (name.trim() === "") {
+        alert("Please enter a name");
+        return false;
+    }
+
+    if (age < 18) {
+        alert("Entered Age is Below 18");
+        return false;
+    }
+
+    if (isNaN(familyMembers) || familyMembers === "") {
+        alert("Please enter number of family members");
+        return false;
+    }
+
+    if (selectedOption === "--Choose One Of Your Liking") {
+        alert("Please select an option");
+        return false;
+    }
+
+    // Redirect to end page with URL parameters
+    window.location.href = "Output.html?name=" + encodeURIComponent(name) + "&familyMembers=" + encodeURIComponent(familyMembers) + "&selectedOption=" + encodeURIComponent(selectedOption);
+
+    return true;
+}
+
+  </script>
+</head>
+
+<body style="background-color: #142426;">
+  <div class="scroll-bar">
+
+    <div class="header">
+
+      <h1>Voyage Vista : Navigate Your Next Journey</h1>
+
+    </div>
+    <br>
+    <br>
+    <!-- Navigation Bar -->
+
+    <ul>
+      <li><a class="active" href="TN.html">Home</a></li>
+      <li><a href="#others">Other Tourist Places</a></li>
+    </ul>
+    <!-- Navigation Bar Ends -->
+    <!-- Form Starts -->
+    <br>
+    <h1>Booking to your Dream Destination</h1>
+    <div class="form-container">
+      <form id="bookingForm" style="text-align: left; color: aliceblue;" action="Output.html" method="post">
+
+
+        <label>Enter name under who you are registering the family</label>
+        <br>
+        <input type="text" id="name" placeholder="Name">
+        <br>
+        <br>
+        <label>Enter Age :</label>
+        <br>
+        <input type="number" id="Age" placeholder="18">
+        <br>
+        <br>
+        <label>Enter number of Family members</label>
+        <br>
+        <input type="number" id="familyMembers" placeholder="3">
+        <br>
+        <br>
+        <label>Which pack would you like</label>
+        <br>
+        <select id="inputSelect" name="inputSelect">
+          <option>--Choose One Of Your Liking</option>
+          <option value="Kanchi Kamakshi Temple">Kanchi Kamakshi Temple</option>
+          <option value="Srirangam Ranganathaswamy Temple">Srirangam Ranganathaswamy Temple</option>
+          <option value="Chidambaram Nataraja Temple">Chidambaram Nataraja Temple</option>
+          <option value="Hampi">Hampi:From boulders to temples, a treasure trove of heritage</option>
+          <option value="Mysuru">Mysuru:Where History Breathes in Every Brick</option>
+          <option value="Belur">Belur :Heritage etched in stone</option>
+          <option value="Lakshmi Varaha Narasimha Swamy Temple">Lakshmi Varaha Narasimha Swamy Temple</option>
+          <option value="Sri Sailam Temple">Sri Sailam Temple</option>
+          <option value="Tirumala Temple">Tirumala Temple</option>
+          <option value="Puri Jagannath Temple">Puri Jagannath Temple</option>
+          <option value="Konark Sun Temple">Konark Sun Temple</option>
+          <option value="Bhubaneswar Temple">Bhubaneswar Temple</option>
+        </select>
+        <br>
+        <br>
+        <button type="button" onclick="Verif()">Submit</button>
+
+      </form>
+      <img src="KarnatakaImage/ImgForm.jpg" alt="Image" />
+    </div>
+    <!-- Form Ends-->
+    
+    <!-- footer starts -->
+    <footer class="bg-dark p-2 text-center">
+
+      <p class="text-white">Thank you! Visit Again</p>
+
+    </footer>
+    <!-- footer ends -->
+  </div>
+</body>
+
+</html>

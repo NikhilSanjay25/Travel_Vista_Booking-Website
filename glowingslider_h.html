@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>How to Create 3D Glowing Card Carousel using Materialize CSS</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>    
+    
+    <div class="carousel">
+        <div class="carousel-item"><a href="TN.html" target="_blank">
+          <div class="gs" align="center">
+            <img src="pics/c14.jpeg" height="90%" width="80%">
+            <div class="gs">
+              <h5>Tamil Nadu</h5>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="carousel-item" float="center"><a href="Andhrapradesh.html" target="_blank">
+          <div class="gs" align="center">
+            <img src="pics/ap5.jpg" height="60%" width="80%">
+            <div class="gs">
+              <h5>Andhra Pradesh</h5>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="carousel-item" float="center"><a href="KARNATAKA.html" target="_blank">
+          <div class="gs" align="center">
+            <img src="pics/kn5.jpg" height="80%" width="70%">
+            <div class="gs">
+              <h5>Karnataka</h5>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="carousel-item" float="center"><a href="odisha.html" target="_blank">
+          <div class="gs" align="center">
+            <img src="pics/o4.jpg" height="50%" width="60%">
+            <div class="gs">
+              <h5>Orissa</h5>
+            </div>
+          </div>
+          </a>
+        </div>
+    </div>   
+    
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+      $(document).ready(function(){
+        $('.carousel').carousel({
+          padding: 200
+      });
+      autoplay();
+      function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+      }
+      });
+</script>
+</body>
+</html>
